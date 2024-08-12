@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+nav {
+  position: relative;
+}
+
+.logo h1 {
+  font-family: "Satisfy", cursive;
+  color: white;
+  font-size: 45px;
+}
+
+.close {
+  display: none;
+  font-size: 35px;
+  color: white;
+}
+
+.link-list ul {
+  display: flex;
+  transition: all 0.5s linear;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 700px) {
+
+  .hide {
+    display: none !important;
+    transition: all 0.5s linear;
+    
+  }
+  .show{
+    position: absolute;
+    border-top: 1px solid white;
+    right: 0;
+    display: flex;
+    font-size: 25px;
+    padding: 50px;
+    transition: all 1s linear;
+    align-items: start;
+    justify-content: start;
+    background-color: #2d3d4d;
+    flex-direction: column;
+    height: 90vh;
+    top: 10vh;
+    gap: 70px;
+    color: white;
+    width: 100%;
+    z-index: 99999;
+  }
+
+
+  .link-list ul li {
+    position: relative;
+   margin-top: 10px;
+  }
+  .link-list ul li::before {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    width: 0;
+    background-color: white;
+  }
+  .link-list ul li:hover::before {
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s linear;
+    content: "";
+    width: 100%;
+  }
+
+  .close {
+    display: flex;
+  }
+
+}
