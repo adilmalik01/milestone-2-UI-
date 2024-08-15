@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import * as Icon from "react-bootstrap-icons";
+import { motion } from "framer-motion"
 import "./navbar.css";
 
-const Navbar = () => { 
+const Navbar = () => {
   const [toggle, isToggle] = useState<boolean>(false);
 
   const toggleHandler = () => {
@@ -16,13 +17,18 @@ const Navbar = () => {
   return (
     <nav className="bg-slate-700 flex justify-between px-7   items-center  w-full h-[10vh]">
       <div className="logo">
-        <h1>{"< Adil malik >"}</h1>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1>{"< Adil malik >"}</h1>
+        </motion.div>
       </div>
       <div className="link-list">
         <ul
-          className={` hidden  ${
-            toggle ? "show " : "hide"
-          } `}
+          className={` hidden  ${toggle ? "show " : "hide"
+            } `}
         >
           <li>
             <a href="/">Home</a>

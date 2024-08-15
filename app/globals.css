@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+main {
+    background-image: url("/3.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.textSequence h1 {
+    /* font-family: 'Courier New', Courier, monospace; */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+    opacity: 1;
+    font-size: 40px;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.typing {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+
+.right{
+    transition: all 0.5s linear;
+}
+
+
+
+.right img {
+    width: 725px !important;
+    animation: image-move 3s ease-in-out infinite; /* Increased duration for smoother transition */
+}
+
+@keyframes image-move {
+    0% {
+        margin-top: 10px;
+    }
+
+    50% {
+        margin-top: -10px;
+    }
+
+    100% {
+        margin-top: 10px;
+    }
+}
